@@ -11,3 +11,11 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+
+# Archivos de compilación
+[Bb]in/
+[Oo]bj/
+
+# Rider / VS Code / Visual Studio
+.idea/
+.vs/
