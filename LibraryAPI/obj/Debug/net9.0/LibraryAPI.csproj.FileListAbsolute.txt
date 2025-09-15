@@ -1,0 +1,11 @@
+/Users/basti/Documents/Semestre6/Georeferenciados/ExamenParcial/LibraryAPI/bin/Debug/net9.0/LibraryAPI.deps.json
+/Users/basti/Documents/Semestre6/Georeferenciados/ExamenParcial/LibraryAPI/bin/Debug/net9.0/LibraryAPI.dll
+/Users/basti/Documents/Semestre6/Georeferenciados/ExamenParcial/LibraryAPI/bin/Debug/net9.0/LibraryAPI.pdb
+/Users/basti/Documents/Semestre6/Georeferenciados/ExamenParcial/LibraryAPI/obj/Debug/net9.0/LibraryAPI.GeneratedMSBuildEditorConfig.editorconfig
+/Users/basti/Documents/Semestre6/Georeferenciados/ExamenParcial/LibraryAPI/obj/Debug/net9.0/LibraryAPI.AssemblyInfoInputs.cache
+/Users/basti/Documents/Semestre6/Georeferenciados/ExamenParcial/LibraryAPI/obj/Debug/net9.0/LibraryAPI.AssemblyInfo.cs
+/Users/basti/Documents/Semestre6/Georeferenciados/ExamenParcial/LibraryAPI/obj/Debug/net9.0/LibraryAPI.csproj.CoreCompileInputs.cache
+/Users/basti/Documents/Semestre6/Georeferenciados/ExamenParcial/LibraryAPI/obj/Debug/net9.0/LibraryAPI.dll
+/Users/basti/Documents/Semestre6/Georeferenciados/ExamenParcial/LibraryAPI/obj/Debug/net9.0/refint/LibraryAPI.dll
+/Users/basti/Documents/Semestre6/Georeferenciados/ExamenParcial/LibraryAPI/obj/Debug/net9.0/LibraryAPI.pdb
+/Users/basti/Documents/Semestre6/Georeferenciados/ExamenParcial/LibraryAPI/obj/Debug/net9.0/ref/LibraryAPI.dll

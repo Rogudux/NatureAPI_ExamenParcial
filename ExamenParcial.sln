@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NatureAPi", "NatureAPi\NatureAPi.csproj", "{5E392D11-316A-4551-A396-1BF09E362DE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryAPI", "LibraryAPI\LibraryAPI.csproj", "{136C99D0-2FAB-4C88-B987-F092E1B647C8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E392D11-316A-4551-A396-1BF09E362DE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E392D11-316A-4551-A396-1BF09E362DE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E392D11-316A-4551-A396-1BF09E362DE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E392D11-316A-4551-A396-1BF09E362DE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{136C99D0-2FAB-4C88-B987-F092E1B647C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{136C99D0-2FAB-4C88-B987-F092E1B647C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{136C99D0-2FAB-4C88-B987-F092E1B647C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{136C99D0-2FAB-4C88-B987-F092E1B647C8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
