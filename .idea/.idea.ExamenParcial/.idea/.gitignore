@@ -1,21 +1,32 @@
-# Default ignored files
+# Rider / Visual Studio / VS Code
+.idea/
+.vs/
+*.suo
+*.user
+*.DotSettings.user
+
+# Reglas específicas de Rider que ya tenías
 /shelf/
 /workspace.xml
-# Rider ignored files
 /modules.xml
 /contentModel.xml
 /projectSettingsUpdater.xml
 /.idea.ExamenParcial.iml
-# Editor-based HTTP Client requests
 /httpRequests/
-# Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
 
-# Archivos de compilación
+# Archivos de compilación y paquetes
 [Bb]in/
 [Oo]bj/
+*.nupkg
 
-# Rider / VS Code / Visual Studio
-.idea/
-.vs/
+# Archivos de configuración local
+appsettings.Development.json
+
+# Archivos de log
+*.log
+
+# Archivos generados por el sistema operativo
+.DS_Store
+Thumbs.db
