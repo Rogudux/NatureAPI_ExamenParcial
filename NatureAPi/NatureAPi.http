@@ -1,0 +1,6 @@
+@NatureAPi_HostAddress = http://localhost:5240
+
+GET {{NatureAPi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
