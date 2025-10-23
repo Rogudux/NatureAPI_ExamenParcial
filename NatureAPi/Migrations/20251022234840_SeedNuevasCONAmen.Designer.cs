@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NatureAPi;
 
@@ -11,9 +12,11 @@ using NatureAPi;
 namespace NatureAPi.Migrations
 {
     [DbContext(typeof(NatureDBContext))]
-    partial class NatureDBContextModelSnapshot : ModelSnapshot
+    [Migration("20251022234840_SeedNuevasCONAmen")]
+    partial class SeedNuevasCONAmen
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -434,7 +437,7 @@ namespace NatureAPi.Migrations
                     b.HasOne("LibraryAPI.models.entities.Place", "Place")
                         .WithMany("Photos")
                         .HasForeignKey("PlaceId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Place");
@@ -443,15 +446,15 @@ namespace NatureAPi.Migrations
             modelBuilder.Entity("LibraryAPI.models.entities.PlaceAmenity", b =>
                 {
                     b.HasOne("LibraryAPI.models.entities.Amenity", "Amenity")
-                        .WithMany("PlaceAmenities")
+                        .WithMany()
                         .HasForeignKey("AmenityId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("LibraryAPI.models.entities.Place", "Place")
-                        .WithMany("PlaceAmenities")
+                        .WithMany()
                         .HasForeignKey("PlaceId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Amenity");
@@ -464,7 +467,7 @@ namespace NatureAPi.Migrations
                     b.HasOne("LibraryAPI.models.entities.Place", "Place")
                         .WithMany("Reviews")
                         .HasForeignKey("PlaceId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Place");
@@ -475,22 +478,15 @@ namespace NatureAPi.Migrations
                     b.HasOne("LibraryAPI.models.entities.Place", "Place")
                         .WithMany("Trails")
                         .HasForeignKey("PlaceId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Place");
                 });
 
-            modelBuilder.Entity("LibraryAPI.models.entities.Amenity", b =>
-                {
-                    b.Navigation("PlaceAmenities");
-                });
-
             modelBuilder.Entity("LibraryAPI.models.entities.Place", b =>
                 {
                     b.Navigation("Photos");
-
-                    b.Navigation("PlaceAmenities");
 
                     b.Navigation("Reviews");
 

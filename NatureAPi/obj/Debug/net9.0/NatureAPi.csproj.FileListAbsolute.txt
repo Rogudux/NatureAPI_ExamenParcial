@@ -273,3 +273,4 @@
 /Users/basti/Documents/Semestre6/Georeferenciados/ExamenParcial/NatureAPi/obj/Debug/net9.0/NatureAPi.pdb
 /Users/basti/Documents/Semestre6/Georeferenciados/ExamenParcial/NatureAPi/obj/Debug/net9.0/NatureAPi.genruntimeconfig.cache
 /Users/basti/Documents/Semestre6/Georeferenciados/ExamenParcial/NatureAPi/obj/Debug/net9.0/ref/NatureAPi.dll
+/Users/basti/Documents/Semestre6/Georeferenciados/ExamenParcial/NatureAPi/obj/Debug/net9.0/NatureAPi.sourcelink.json

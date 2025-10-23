@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NatureAPi;
 
@@ -11,9 +12,11 @@ using NatureAPi;
 namespace NatureAPi.Migrations
 {
     [DbContext(typeof(NatureDBContext))]
-    partial class NatureDBContextModelSnapshot : ModelSnapshot
+    [Migration("20251022232107_SeedNuevas")]
+    partial class SeedNuevas
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,28 +44,23 @@ namespace NatureAPi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 5,
-                            Name = "Miradores y pasarelas (Agua Azul)"
+                            Id = 1,
+                            Name = "Departamento frente a playa isla mujeres"
                         },
                         new
                         {
-                            Id = 6,
-                            Name = "Mirador panorámico (Divisadero)"
+                            Id = 2,
+                            Name = "Cabaña a un lado de monumentos en playa isla mujeres"
                         },
                         new
                         {
-                            Id = 7,
-                            Name = "Refugio de alta montaña (Nevado)"
+                            Id = 3,
+                            Name = "Zona de campamento en selva lacandona"
                         },
                         new
                         {
-                            Id = 8,
-                            Name = "Muelle público y zona de nado (Bacalar)"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Name = "Embarcadero turístico (Sumidero)"
+                            Id = 4,
+                            Name = "Bote equipado en medio del rio en selva lacandona"
                         });
                 });
 
@@ -256,31 +254,6 @@ namespace NatureAPi.Migrations
                     b.HasData(
                         new
                         {
-                            PlaceId = 6,
-                            AmenityId = 5
-                        },
-                        new
-                        {
-                            PlaceId = 7,
-                            AmenityId = 6
-                        },
-                        new
-                        {
-                            PlaceId = 8,
-                            AmenityId = 7
-                        },
-                        new
-                        {
-                            PlaceId = 9,
-                            AmenityId = 8
-                        },
-                        new
-                        {
-                            PlaceId = 10,
-                            AmenityId = 9
-                        },
-                        new
-                        {
                             PlaceId = 1,
                             AmenityId = 1
                         },
@@ -434,7 +407,7 @@ namespace NatureAPi.Migrations
                     b.HasOne("LibraryAPI.models.entities.Place", "Place")
                         .WithMany("Photos")
                         .HasForeignKey("PlaceId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Place");
@@ -443,15 +416,15 @@ namespace NatureAPi.Migrations
             modelBuilder.Entity("LibraryAPI.models.entities.PlaceAmenity", b =>
                 {
                     b.HasOne("LibraryAPI.models.entities.Amenity", "Amenity")
-                        .WithMany("PlaceAmenities")
+                        .WithMany()
                         .HasForeignKey("AmenityId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("LibraryAPI.models.entities.Place", "Place")
-                        .WithMany("PlaceAmenities")
+                        .WithMany()
                         .HasForeignKey("PlaceId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Amenity");
@@ -464,7 +437,7 @@ namespace NatureAPi.Migrations
                     b.HasOne("LibraryAPI.models.entities.Place", "Place")
                         .WithMany("Reviews")
                         .HasForeignKey("PlaceId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Place");
@@ -475,22 +448,15 @@ namespace NatureAPi.Migrations
                     b.HasOne("LibraryAPI.models.entities.Place", "Place")
                         .WithMany("Trails")
                         .HasForeignKey("PlaceId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Place");
                 });
 
-            modelBuilder.Entity("LibraryAPI.models.entities.Amenity", b =>
-                {
-                    b.Navigation("PlaceAmenities");
-                });
-
             modelBuilder.Entity("LibraryAPI.models.entities.Place", b =>
                 {
                     b.Navigation("Photos");
-
-                    b.Navigation("PlaceAmenities");
 
                     b.Navigation("Reviews");
 

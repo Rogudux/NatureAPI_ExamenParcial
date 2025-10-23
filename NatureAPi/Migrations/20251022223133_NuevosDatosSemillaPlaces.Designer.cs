@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NatureAPi;
 
@@ -11,9 +12,11 @@ using NatureAPi;
 namespace NatureAPi.Migrations
 {
     [DbContext(typeof(NatureDBContext))]
-    partial class NatureDBContextModelSnapshot : ModelSnapshot
+    [Migration("20251022223133_NuevosDatosSemillaPlaces")]
+    partial class NuevosDatosSemillaPlaces
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,28 +44,23 @@ namespace NatureAPi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 5,
-                            Name = "Miradores y pasarelas (Agua Azul)"
+                            Id = 1,
+                            Name = "Departamento frente a playa isla mujeres"
                         },
                         new
                         {
-                            Id = 6,
-                            Name = "Mirador panorámico (Divisadero)"
+                            Id = 2,
+                            Name = "Cabaña a un lado de monumentos en playa isla mujeres"
                         },
                         new
                         {
-                            Id = 7,
-                            Name = "Refugio de alta montaña (Nevado)"
+                            Id = 3,
+                            Name = "Zona de campamento en selva lacandona"
                         },
                         new
                         {
-                            Id = 8,
-                            Name = "Muelle público y zona de nado (Bacalar)"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Name = "Embarcadero turístico (Sumidero)"
+                            Id = 4,
+                            Name = "Bote equipado en medio del rio en selva lacandona"
                         });
                 });
 
@@ -90,33 +88,27 @@ namespace NatureAPi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 6,
-                            PlaceId = 6,
-                            URL = "https://visitachiapas.com/wp-content/uploads/32080021_2001255793535615_8694945979746484224_n-845x684.jpg"
+                            Id = 1,
+                            PlaceId = 1,
+                            URL = "https://images.odigoo.com/cb6a1e9c-21c6-4165-9ba7-db9263d832a1/images/media/isla-mujeres-beaches/webp/playa-norte-htfw.webp"
                         },
                         new
                         {
-                            Id = 7,
-                            PlaceId = 7,
-                            URL = "https://static.wixstatic.com/media/cf3297_1207992ee7504d6b89bef1ad615630e4~mv2.jpg/v1/fill/w_568,h_378,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/cf3297_1207992ee7504d6b89bef1ad615630e4~mv2.jpg"
+                            Id = 2,
+                            PlaceId = 1,
+                            URL = "https://cdn.sanity.io/images/atvntylo/production/52a6fcd9855b358bda42ad22de46ad0dfdbd7673-1200x630.png"
                         },
                         new
                         {
-                            Id = 8,
-                            PlaceId = 8,
-                            URL = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Vista_del_Nevado_de_Toluca.jpg/1280px-Vista_del_Nevado_de_Toluca.jpg"
+                            Id = 3,
+                            PlaceId = 2,
+                            URL = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNIIv3OeZuYBcyk2F1mR6e-19hILJZ5BpiVA&s"
                         },
                         new
                         {
-                            Id = 9,
-                            PlaceId = 9,
-                            URL = "https://www.gob.mx/cms/uploads/article/main_image/83508/BACALAR-web.jpg"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            PlaceId = 10,
-                            URL = "https://www.shutterstock.com/image-photo/sumidero-canyon-chiapas-mexico-600nw-2292202987.jpg"
+                            Id = 4,
+                            PlaceId = 2,
+                            URL = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9BeIi7ay8rQgZG4HEnLqGsjwmdFgKo_81xg&s"
                         });
                 });
 
@@ -169,7 +161,49 @@ namespace NatureAPi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 6,
+                            Id = 1,
+                            Accessible = true,
+                            Category = "Playa",
+                            CreatedAt = new DateTime(2025, 9, 15, 0, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "Reconocida mundialmente por su arena blanca y fina, y sus aguas cristalinas de poca profundidad y oleaje suave, ideal para nadar y relajarse.",
+                            ElevationMeters = 1,
+                            EntryFee = 0.0,
+                            Latitude = 21.2577,
+                            Longitude = -86.7517,
+                            Name = "Playa Isla Mujeres",
+                            OpeningHours = "Abierto 24 horas"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Accessible = true,
+                            Category = "Selva",
+                            CreatedAt = new DateTime(2025, 9, 15, 0, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "Una de las regiones de mayor diversidad biológica de México y el mundo. Es el corazón de la selva tropical más grande del país y hogar de especies como el jaguar y la guacamaya roja.",
+                            ElevationMeters = 200,
+                            EntryFee = 300.0,
+                            Latitude = 16.633299999999998,
+                            Longitude = -91.0,
+                            Name = "Selva Lacandona",
+                            OpeningHours = "Varía según el tour; generalmente 7:00 AM - 6:00 PM"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Accessible = true,
+                            Category = "Formación geológica",
+                            CreatedAt = new DateTime(2025, 9, 15, 0, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "Formaciones petrificadas de travertino con pozas naturales color turquesa en la Sierra de Oaxaca, con miradores y senderos panorámicos.",
+                            ElevationMeters = 1800,
+                            EntryFee = 70.0,
+                            Latitude = 16.867000000000001,
+                            Longitude = -96.268000000000001,
+                            Name = "Hierve el Agua",
+                            OpeningHours = "08:00 - 18:00"
+                        },
+                        new
+                        {
+                            Id = 4,
                             Accessible = true,
                             Category = "Cascada",
                             CreatedAt = new DateTime(2025, 9, 15, 0, 0, 0, 0, DateTimeKind.Utc),
@@ -183,7 +217,7 @@ namespace NatureAPi.Migrations
                         },
                         new
                         {
-                            Id = 7,
+                            Id = 5,
                             Accessible = true,
                             Category = "Cañón",
                             CreatedAt = new DateTime(2025, 9, 15, 0, 0, 0, 0, DateTimeKind.Utc),
@@ -197,7 +231,7 @@ namespace NatureAPi.Migrations
                         },
                         new
                         {
-                            Id = 8,
+                            Id = 6,
                             Accessible = true,
                             Category = "Volcán",
                             CreatedAt = new DateTime(2025, 9, 15, 0, 0, 0, 0, DateTimeKind.Utc),
@@ -211,7 +245,7 @@ namespace NatureAPi.Migrations
                         },
                         new
                         {
-                            Id = 9,
+                            Id = 7,
                             Accessible = true,
                             Category = "Laguna",
                             CreatedAt = new DateTime(2025, 9, 15, 0, 0, 0, 0, DateTimeKind.Utc),
@@ -225,7 +259,7 @@ namespace NatureAPi.Migrations
                         },
                         new
                         {
-                            Id = 10,
+                            Id = 8,
                             Accessible = true,
                             Category = "Cañón",
                             CreatedAt = new DateTime(2025, 9, 15, 0, 0, 0, 0, DateTimeKind.Utc),
@@ -254,31 +288,6 @@ namespace NatureAPi.Migrations
                     b.ToTable("PlaceAmenity");
 
                     b.HasData(
-                        new
-                        {
-                            PlaceId = 6,
-                            AmenityId = 5
-                        },
-                        new
-                        {
-                            PlaceId = 7,
-                            AmenityId = 6
-                        },
-                        new
-                        {
-                            PlaceId = 8,
-                            AmenityId = 7
-                        },
-                        new
-                        {
-                            PlaceId = 9,
-                            AmenityId = 8
-                        },
-                        new
-                        {
-                            PlaceId = 10,
-                            AmenityId = 9
-                        },
                         new
                         {
                             PlaceId = 1,
@@ -374,58 +383,47 @@ namespace NatureAPi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 101,
-                            Difficulty = "Moderado",
-                            DistanceKm = 2.3999999999999999,
-                            EstimatedTimeMinutes = 75,
-                            IsLoop = false,
-                            Name = "Sendero Pozas Turquesa",
-                            Path = "Tramo sombreado que sigue el cauce del rio con miradores a varias caidas; se avanza sobre pasarelas y roca humeda, con tramos resbalosos tras lluvia.",
-                            PlaceId = 6
-                        },
-                        new
-                        {
-                            Id = 102,
-                            Difficulty = "Dificil",
-                            DistanceKm = 7.0,
-                            EstimatedTimeMinutes = 210,
-                            IsLoop = false,
-                            Name = "Miradores del Divisadero",
-                            Path = "Recorrido por la cresta con sube y baja constante; bordea varios miradores naturales con secciones expuestas y terreno pedregoso.",
-                            PlaceId = 7
-                        },
-                        new
-                        {
-                            Id = 103,
-                            Difficulty = "Dificil",
-                            DistanceKm = 5.5,
-                            EstimatedTimeMinutes = 180,
-                            IsLoop = true,
-                            Name = "Lagunas del Sol y la Luna",
-                            Path = "Circuito a gran altitud que desciende al crater y rodea ambas lagunas; piso de arena volcanica y piedra suelta con pendientes pronunciadas.",
-                            PlaceId = 8
-                        },
-                        new
-                        {
-                            Id = 104,
+                            Id = 1,
                             Difficulty = "Facil",
-                            DistanceKm = 3.2000000000000002,
-                            EstimatedTimeMinutes = 80,
+                            DistanceKm = 1.2,
+                            EstimatedTimeMinutes = 25,
                             IsLoop = true,
-                            Name = "Costera de los Siete Colores",
-                            Path = "Camino llano junto a la laguna con accesos a muelles y miradores; ideal para paseo suave con paradas para fotografias.",
-                            PlaceId = 9
+                            Name = "Sendero Escultórico de Punta Sur",
+                            Path = "Un camino costero que rodea el acantilado sur de la isla, pasando por un jardín de esculturas y con vistas espectaculares al mar Caribe.",
+                            PlaceId = 1
                         },
                         new
                         {
-                            Id = 105,
-                            Difficulty = "Moderado",
-                            DistanceKm = 4.0,
+                            Id = 2,
+                            Difficulty = "Dificil",
+                            DistanceKm = 2.5,
+                            EstimatedTimeMinutes = 45,
+                            IsLoop = true,
+                            Name = "Circuito de la Salina Grande",
+                            Path = "Ruta plana que bordea la laguna salada en el centro de la isla, ideal para observar aves y disfrutar de un paisaje diferente al de la playa.",
+                            PlaceId = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Difficulty = "Intermedio",
+                            DistanceKm = 4.5,
                             EstimatedTimeMinutes = 120,
                             IsLoop = false,
-                            Name = "Ribera del Grijalva",
-                            Path = "Senda riberenia entre selva baja y paredones del cañon; zonas con lodazales en temporada y tramos estrechos junto al rio.",
-                            PlaceId = 10
+                            Name = "Sendero del Río Lacanjá",
+                            Path = "Una caminata inmersiva a lo largo de la ribera del río Lacanjá, atravesando vegetación densa y puentes colgantes, terminando en una serie de cascadas.",
+                            PlaceId = 2
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Difficulty = "Facil",
+                            DistanceKm = 3.0,
+                            EstimatedTimeMinutes = 90,
+                            IsLoop = true,
+                            Name = "Exploración de la Zona Arqueológica de Yaxchilán",
+                            Path = "Circuito que conecta las principales estructuras y estelas mayas de Yaxchilán, un sitio accesible solo por río. El sendero está rodeado por el sonido de monos aulladores.",
+                            PlaceId = 2
                         });
                 });
 
@@ -434,7 +432,7 @@ namespace NatureAPi.Migrations
                     b.HasOne("LibraryAPI.models.entities.Place", "Place")
                         .WithMany("Photos")
                         .HasForeignKey("PlaceId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Place");
@@ -443,15 +441,15 @@ namespace NatureAPi.Migrations
             modelBuilder.Entity("LibraryAPI.models.entities.PlaceAmenity", b =>
                 {
                     b.HasOne("LibraryAPI.models.entities.Amenity", "Amenity")
-                        .WithMany("PlaceAmenities")
+                        .WithMany()
                         .HasForeignKey("AmenityId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("LibraryAPI.models.entities.Place", "Place")
-                        .WithMany("PlaceAmenities")
+                        .WithMany()
                         .HasForeignKey("PlaceId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Amenity");
@@ -464,7 +462,7 @@ namespace NatureAPi.Migrations
                     b.HasOne("LibraryAPI.models.entities.Place", "Place")
                         .WithMany("Reviews")
                         .HasForeignKey("PlaceId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Place");
@@ -475,22 +473,15 @@ namespace NatureAPi.Migrations
                     b.HasOne("LibraryAPI.models.entities.Place", "Place")
                         .WithMany("Trails")
                         .HasForeignKey("PlaceId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Place");
                 });
 
-            modelBuilder.Entity("LibraryAPI.models.entities.Amenity", b =>
-                {
-                    b.Navigation("PlaceAmenities");
-                });
-
             modelBuilder.Entity("LibraryAPI.models.entities.Place", b =>
                 {
                     b.Navigation("Photos");
-
-                    b.Navigation("PlaceAmenities");
 
                     b.Navigation("Reviews");
 

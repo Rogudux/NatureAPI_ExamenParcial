@@ -1,37 +1,51 @@
 using Microsoft.EntityFrameworkCore;
 using NatureAPi;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// -------- SERVICES (todo antes de Build) --------
+builder.Services.AddControllers()
+    .AddJsonOptions(o =>
+    {
+        o.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+        o.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
+    });
 
-builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
-
+// OpenAPI con Swashbuckle
+builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
 
-var ConnectionString = builder.Configuration.GetConnectionString("SqlServer");
+// DbContext
+var connectionString = builder.Configuration.GetConnectionString("SqlServer");
+builder.Services.AddDbContext<NatureDBContext>(o => o.UseSqlServer(connectionString));
 
-builder.Services.AddDbContext<NatureDBContext>(o => o
-    .UseSqlServer(ConnectionString));
-
+// -------- BUILD --------
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// -------- MIDDLEWARE --------
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+    app.UseDeveloperExceptionPage();
+    app.UseSwagger();       // genera /swagger/v1/swagger.json
+    app.UseSwaggerUI();     // UI en /swagger
 }
 
-app.UseSwaggerUI();
-app.UseSwagger();
-
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
 
 app.MapControllers();
+app.UseCors("AllowAll");
+
 
 app.Run();
