@@ -7,7 +7,6 @@ RUN ls
 # Restore as distinct layers
 RUN dotnet restore
 # Build and publish a release
-RUN ls /App/ExamenParcial
 RUN dotnet publish /App/ExamenParcial/ExamenParcial.csproj -c Release -o /App/build
 
 
