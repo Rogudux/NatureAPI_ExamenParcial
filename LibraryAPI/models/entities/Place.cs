@@ -24,4 +24,7 @@ public class Place
     public List<Trail> Trails { get; set; }
     public List<Photo> Photos { get; set; }
     public List<Review> Reviews { get; set; }
+    
+    public ICollection<PlaceAmenity> PlaceAmenities { get; set; } = new List<PlaceAmenity>();
+
 }

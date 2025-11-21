@@ -8,4 +8,6 @@ public class PlaceAmenity
     public Amenity Amenity { get; set; }
     public int AmenityId { get; set; }
     
+    
+    
 }
