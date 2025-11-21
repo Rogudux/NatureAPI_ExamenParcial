@@ -22,7 +22,7 @@ RUN mkdir -p /usr/share/fonts/truetype/poppins && \
     fc-cache -f -v
 WORKDIR /App
 COPY --from=build-env /App/build .
-RUN chmod 755 /App/Rotativa/Linux/wkhtmltopdf
+RUN chmod 755 /App/Rotativa/Linux
 ENTRYPOINT ["dotnet", "ExamenParcial.dll"]
 
  
