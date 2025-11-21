@@ -7,8 +7,8 @@ RUN ls
 # Restore as distinct layers
 RUN dotnet restore
 # Build and publish a release
-RUN ls /App/FrameworkYConexionBD
-RUN dotnet publish /App/FrameworkYConexionBD/FrameworkYConexionBD.csproj -c Release -o /App/build
+RUN ls /App/ExamenParcial
+RUN dotnet publish /App/ExamenParcial/ExamenParcial.csproj -c Release -o /App/build
 
 
 # Build runtime image
@@ -23,8 +23,8 @@ RUN mkdir -p /usr/share/fonts/truetype/poppins && \
     fc-cache -f -v
 WORKDIR /App
 COPY --from=build-env /App/build .
-COPY ./FrameworkYConexionBD/Templates ./Templates
+COPY ./ExamenParcial/Templates ./Templates
 RUN chmod 755 /App/Rotativa/Linux/wkhtmltopdf
-ENTRYPOINT ["dotnet", "FrameworkYConexionBD.dll"]
+ENTRYPOINT ["dotnet", "ExamenParcial.dll"]
 
  
