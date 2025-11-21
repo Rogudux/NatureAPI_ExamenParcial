@@ -22,6 +22,6 @@ RUN mkdir -p /usr/share/fonts/truetype/poppins && \
     fc-cache -f -v
 WORKDIR /App
 COPY --from=build-env /App/build .
-ENTRYPOINT ["dotnet", "ExamenParcial.dll"]
+ENTRYPOINT ["dotnet", "NatureAPi.dll"]
 
  
