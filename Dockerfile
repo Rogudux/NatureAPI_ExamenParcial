@@ -7,8 +7,8 @@ RUN ls
 # Restore as distinct layers
 RUN dotnet restore
 # Build and publish a release
-RUN ls /App/ExamenParcial
-RUN dotnet publish /App/ExamenParcial/NatureAPI.csproj -c Release -o /App/build
+RUN ls /App/NatureAPI
+RUN dotnet publish /App/NatureAPI/NatureAPI.csproj -c Release -o /App/build
 
 
 # Build runtime image
