@@ -26,4 +26,8 @@
       <ProjectReference Include="..\LibraryAPI\LibraryAPI.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Templates\StoreTemplate.cshtml" />
+    </ItemGroup>
+
 </Project>
