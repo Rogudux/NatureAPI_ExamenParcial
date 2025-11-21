@@ -274,3 +274,5 @@
 /Users/basti/Documents/Semestre6/Georeferenciados/ExamenParcial/NatureAPi/obj/Debug/net9.0/NatureAPi.genruntimeconfig.cache
 /Users/basti/Documents/Semestre6/Georeferenciados/ExamenParcial/NatureAPi/obj/Debug/net9.0/ref/NatureAPi.dll
 /Users/basti/Documents/Semestre6/Georeferenciados/ExamenParcial/NatureAPi/obj/Debug/net9.0/NatureAPi.sourcelink.json
+/Users/basti/Documents/Semestre6/Georeferenciados/ExamenParcial/NatureAPi/bin/Debug/net9.0/OpenAI.dll
+/Users/basti/Documents/Semestre6/Georeferenciados/ExamenParcial/NatureAPi/bin/Debug/net9.0/System.Net.ServerSentEvents.dll

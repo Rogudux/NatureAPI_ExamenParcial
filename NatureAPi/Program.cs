@@ -34,12 +34,10 @@ builder.Services.AddDbContext<NatureDBContext>(o => o.UseSqlServer(connectionStr
 var app = builder.Build();
 
 // -------- MIDDLEWARE --------
-if (app.Environment.IsDevelopment())
-{
-    app.UseDeveloperExceptionPage();
-    app.UseSwagger();       // genera /swagger/v1/swagger.json
-    app.UseSwaggerUI();     // UI en /swagger
-}
+
+app.UseDeveloperExceptionPage();
+app.UseSwagger();       // genera /swagger/v1/swagger.json
+app.UseSwaggerUI();     // UI en /swagger
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
